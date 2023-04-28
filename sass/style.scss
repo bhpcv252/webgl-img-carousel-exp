@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  font-family: 'Merriweather', serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  .scroll {
+    font-size: 1rem;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    color: rgb(9, 10, 8);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid rgb(9, 10, 8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+  }
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.nWrapper {
+  position: absolute;
+  z-index: 10;
+
+  .n {
+    position: absolute;
+    width: 200px;
+    height: 10px;
+    background-color: rgb(9, 10, 8);
+    cursor: pointer;
+
+    span {
+      color: rgb(9, 10, 8);
+      position: absolute;
+      font-size: 4rem;
+      right: -50px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    @for $i from 1 through 9 {
+      &.n#{$i} {
+        top:  #{$i*100}px;
+      }
+    }
+
+  }
+}
+

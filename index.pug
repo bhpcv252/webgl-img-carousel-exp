@@ -1,0 +1,15 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title Three.js webScroll
+    body
+        .container
+            .nWrapper
+                - for (let n = 1; n <= 9; n++)
+                    div.n(class="n"+n, data-value=n-1)
+                        span= n
+
+            .scroll scroll
+        script(src='js/app.js')
